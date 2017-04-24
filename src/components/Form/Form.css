@@ -1,0 +1,10 @@
+form {
+  width: 40%;
+  padding: 5%;
+  margin: auto;
+}
+
+.form-content-skills {
+  display: flex;
+  justify-content: space-around;
+}
