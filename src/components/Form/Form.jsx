@@ -59,6 +59,22 @@ const Form = () =>
       </fieldset>
     </p>
 
+    <p>
+      <fieldset>
+        <legend>Modifier ces repos Github : </legend>
+        <label> URL : </label>
+        <input type="url" name="repo"/>
+      </fieldset>
+    </p>
+
+    <p>
+      <fieldset>
+        <legend>Modifier ces repos Github : </legend>
+        <label> URL : </label>
+        <input type="url" name="repo"/>
+      </fieldset>
+    </p>
+
     <input type="submit" value="Valider"/>
   </form>
 ;
