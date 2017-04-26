@@ -13,10 +13,16 @@
     "pg": "^6.1.5",
     "pg-hstore": "^2.3.2",
     "react": "^15.5.4",
+<<<<<<< HEAD
     "react-dom": "^15.5.4",
     "sequelize": "^3.30.4",
     "sqlite3": "^3.1.8",
     "tedious": "^2.0.0"
+=======
+    "react-bootstrap": "^0.30.10",
+    "react-dom": "^15.5.4",
+    "react-fontawesome": "^1.6.1"
+>>>>>>> 9a4dfe9c8fd8d786e65fdc7292a85fcf20284297
   },
   "scripts": {
     "start": "react-scripts start",

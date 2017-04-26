@@ -1,18 +1,39 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Form from './components/Form/Form.jsx';
+import NavbarInstance from './components/HeaderPublic/Navbar.jsx';
+import ProfilPhoto from './components/ProfilPhoto/ProfilPhoto.jsx';
+import logo from '../public/logo-couleur.png';
+import FormUpdateProfilPhoto from './components/Form/FormUpdateProfilPhoto.jsx';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      display: {display: 'none'},
+    }
+  }
+
+  openForm = (event) => {
+    this.setState({
+      display: {display: 'block'}
+    });
+  }
+
+  closeForm = () => {
+    this.setState({
+      display: {display: 'none'}
+    })
+  }
+
+
   render() {
     return (
       <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <NavbarInstance />
+
+        <ProfilPhoto source={logo} alt="logo" onclick={this.openForm} />
+
+        <FormUpdateProfilPhoto  display={this.state.display} onclick={this.closeForm}/>
       </div>
     );
   }
