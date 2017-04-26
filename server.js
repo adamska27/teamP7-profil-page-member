@@ -7,7 +7,7 @@ const router     = express.Router();
 
 app.use(bodyParser.urlencoded({extended: true }));
 app.use('/find', router);
-
+app.use(express.static('./build/'));
 
 app.get('/', (req, res) => {
     console.log(pgURL);
@@ -16,21 +16,22 @@ app.get('/', (req, res) => {
         client.query('SELECT prenom, nom, skills FROM users ', (error, result) => {
             console.log(error);
              done();
-             res.send(result.rows)
+             res.sendFile(path.join(__dirname, './build'));
+            //  res.send(result.rows)
         })
     })
 });
 
 app.post('/post', (req, res) => {
 
-  const post  = {prenom: req.body.prenom, nom: req.body.nom, skills: req.body.skills};
+  const post  = {prenom: req.body.prenom, nom: req.body.nom, skills: req.body.skills, image: req.body.image};
   const stringObjectTransform = (string) => '{'+string.split(' ').join(',')+'}';
   const convertedSkills = stringObjectTransform(req.body.skills);
   console.log('Converted Skills',convertedSkills);
   console.log('Variables', post);
     console.log(pgURL);
     pg.connect(pgURL, (error, client, done) => {
-        client.query('INSERT INTO users (prenom, nom, skills) VALUES ($1, $2, $3);', [post.prenom, post.nom, convertedSkills],  (error, result) => {           
+        client.query('INSERT INTO users (prenom, nom, skills, image) VALUES ($1, $2, $3, $4);', [post.prenom, post.nom, convertedSkills, post.image],  (error, result) => {           
              done();
              res.send(result);
         })
