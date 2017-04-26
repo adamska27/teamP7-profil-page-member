@@ -26,12 +26,15 @@ class App extends Component {
   }
 
   getAPI = () => {
-    fetch('http://localhost:3005/users')
+    fetch(`${window.location.origin}/users`)
     .then((res) => {
-      console.log(res);
+      return res.json();
     })
     .then((json) => {
-      console.log(json);
+      for(var i = 0; i < json.length; i++){
+         console.log("json",json[i].nom);
+      }
+     
     });
   }
 

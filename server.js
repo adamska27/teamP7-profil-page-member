@@ -47,7 +47,7 @@ router.route('/:prenom')
          console.log(pgURL);
         pg.connect(pgURL, (error, client, done) => {
         console.log(error);
-        client.query('SELECT * FROM users WHERE prenom = $1', [req.params.prenom], (error, result) => {
+        client.query('SELECT * FROM users WHERE id = $1', [req.params.prenom], (error, result) => {
             console.log(error)
              done();
              res.send(result.rows);
