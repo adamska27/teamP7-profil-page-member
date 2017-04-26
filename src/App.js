@@ -50,7 +50,6 @@ class App extends Component {
       <div className="App">
         <NavbarInstance />
         {/* <Form /> */}
-        <GridInstance />
 
         <ProfilPhoto source={logo} alt="logo" onclick={this.openForm} />
 
@@ -59,6 +58,8 @@ class App extends Component {
       <Skills />
 
       <button onClick={this.getAPI}></button>
+
+      <GridInstance />
       </div>
     );
   }
