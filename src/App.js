@@ -35,7 +35,7 @@ class App extends Component {
     .then((json) => {
       this.setState({
         data: json
-        
+
       })
          console.log("le data",this.state.data);
 
@@ -54,6 +54,14 @@ class App extends Component {
         <FormUpdateProfilPhoto  display={this.state.display} onclick={this.closeForm}/>
 
       <Skills />
+
+      <ul>
+        {
+          this.state.data.map( item =>
+          <a href={`/find/${item.id}`}><li>{item.nom}</li></a>
+         )
+       }
+      </ul>
 
       <button onClick={this.getAPI}></button>
       </div>

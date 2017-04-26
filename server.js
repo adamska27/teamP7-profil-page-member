@@ -22,7 +22,7 @@ app.get('/users', (req, res) => {
     pg.connect(pgURL, (error, client, done) => {
         console.log(error);
         client
-        .query('SELECT prenom, nom, image, skills FROM users ', (error, result) => {
+        .query('SELECT id, prenom, nom, image, skills FROM users ', (error, result) => {
             console.log(error);
              done();
             res.send(result.rows)
