@@ -4,6 +4,7 @@ import NavbarInstance from './components/HeaderPublic/Navbar.jsx';
 import ProfilPhoto from './components/ProfilPhoto/ProfilPhoto.jsx';
 import logo from '../public/logo-couleur.png';
 import FormUpdateProfilPhoto from './components/Form/FormUpdateProfilPhoto.jsx';
+import Skills from './components/Skills/Skills.jsx';
 
 class App extends Component {
   constructor(props) {
@@ -34,7 +35,7 @@ class App extends Component {
       for(var i = 0; i < json.length; i++){
          console.log("json",json[i].nom);
       }
-     
+
     });
   }
 
@@ -47,6 +48,8 @@ class App extends Component {
         <ProfilPhoto source={logo} alt="logo" onclick={this.openForm} />
 
         <FormUpdateProfilPhoto  display={this.state.display} onclick={this.closeForm}/>
+
+      <Skills />
 
       <button onClick={this.getAPI}></button>
       </div>
