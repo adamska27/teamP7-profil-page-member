@@ -5,7 +5,7 @@ import {Row} from 'react-bootstrap';
 import {Col} from 'react-bootstrap';
 import {Button} from 'react-bootstrap';
 
-const GridInstance = () =>
+const BodyInstance = () =>
 <Grid className="bd">
   <h2>ANNONCES</h2>
   <Row className="show-grid" id="bck">
@@ -67,4 +67,4 @@ const GridInstance = () =>
   </Row>
   <Button className="btnm" bsStyle="primary">Voir plus d'annones</Button>
 </Grid>
-export default GridInstance;
+export default BodyInstance;

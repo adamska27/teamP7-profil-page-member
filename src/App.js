@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Form from './components/Form/Form.jsx';
 import NavbarInstance from './components/HeaderPublic/Navbar.jsx';
-import GridInstance from './components/body/Body.jsx';
+import BodyInstance from './components/body/Body.jsx';
 import GridInstance from './components/footerPublic/grid.jsx';
 import ProfilPhoto from './components/ProfilPhoto/ProfilPhoto.jsx';
 import logo from '../public/logo-couleur.png';
@@ -53,7 +53,7 @@ class App extends Component {
         <NavbarInstance />
 
         <Form />
-        <GridInstance />
+        <BodyInstance />
 
 
         <ProfilPhoto source={logo} alt="logo" onclick={this.openForm} />
