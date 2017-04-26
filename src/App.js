@@ -3,6 +3,7 @@ import NavbarInstance from './components/HeaderPublic/Navbar.jsx';
 import ProfilPhoto from './components/ProfilPhoto/ProfilPhoto.jsx';
 import logo from '../public/logo-couleur.png';
 import FormUpdateProfilPhoto from './components/Form/FormUpdateProfilPhoto.jsx';
+import ChangeProfilPicture from './components/Form/ChangeProfilPicture.jsx';
 
 class App extends Component {
   constructor(props) {
@@ -12,17 +13,6 @@ class App extends Component {
     }
   }
 
-  openForm = (event) => {
-    this.setState({
-      display: {display: 'block'}
-    });
-  }
-
-  closeForm = () => {
-    this.setState({
-      display: {display: 'none'}
-    })
-  }
 
 
   render() {
@@ -30,8 +20,6 @@ class App extends Component {
       <div className="App">
         <NavbarInstance />
         <ProfilPhoto source={logo} alt="logo" onclick={this.openForm} />
-
-        <FormUpdateProfilPhoto  display={this.state.display} onclick={this.closeForm}/>
       </div>
     );
   }
