@@ -10,14 +10,18 @@ app.use('/find', router);
 app.use(express.static('./build/'));
 
 app.get('/', (req, res) => {
+             res.sendFile(path.join(__dirname, './build'));
+            //  res.send(result.rows)
+        });
+
+app.get('/users', (req, res) => {
     console.log(pgURL);
     pg.connect(pgURL, (error, client, done) => {
         console.log(error);
         client.query('SELECT prenom, nom, skills FROM users ', (error, result) => {
             console.log(error);
              done();
-             res.sendFile(path.join(__dirname, './build'));
-            //  res.send(result.rows)
+            res.send(result.rows)
         })
     })
 });
@@ -31,7 +35,7 @@ app.post('/post', (req, res) => {
   console.log('Variables', post);
     console.log(pgURL);
     pg.connect(pgURL, (error, client, done) => {
-        client.query('INSERT INTO users (prenom, nom, skills, image) VALUES ($1, $2, $3, $4);', [post.prenom, post.nom, convertedSkills, post.image],  (error, result) => {           
+        client.query('INSERT INTO users (prenom, nom, skills, image) VALUES ($1, $2, $3, $4);', [post.prenom, post.nom, convertedSkills, post.image],  (error, result) => {
              done();
              res.send(result);
         })
@@ -76,7 +80,7 @@ router.route('/:prenom')
 
 router.use(function(req, res, next) {
     console.log('Something is happening.');
-    next(); 
+    next();
 });
 
 

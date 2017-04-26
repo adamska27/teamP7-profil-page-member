@@ -25,6 +25,16 @@ class App extends Component {
     })
   }
 
+  getAPI = () => {
+    fetch('http://localhost:3005/users')
+    .then((res) => {
+      console.log(res);
+    })
+    .then((json) => {
+      console.log(json);
+    });
+  }
+
 
   render() {
     return (
@@ -34,6 +44,8 @@ class App extends Component {
         <ProfilPhoto source={logo} alt="logo" onclick={this.openForm} />
 
         <FormUpdateProfilPhoto  display={this.state.display} onclick={this.closeForm}/>
+
+      <button onClick={this.getAPI}></button>
       </div>
     );
   }
