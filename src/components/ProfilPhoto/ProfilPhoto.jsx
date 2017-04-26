@@ -1,11 +1,11 @@
 import React from 'react';
 import './ProfilPhoto.css';
-import UpdateButton from '../Buttons/UpdateButton.jsx';
+import ChangeProfilPicture from '../Form/ChangeProfilPicture.jsx';
 
 const ProfilPhoto = (props) =>
   <div className="photo-content">
     <img src={props.source} alt={props.alt} />
-    <UpdateButton href="#" onclick={props.onclick}/>
+    <ChangeProfilPicture/>
   </div>
 ;
 

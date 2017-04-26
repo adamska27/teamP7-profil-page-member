@@ -1,0 +1,29 @@
+grid{
+  display: grid;
+  justify-content: center;
+}
+.show-grid{
+  display: wrap;
+  justify-content: center;
+  background-color: rgb(224,224,224);
+  width: 101%;
+}
+
+#logogris{
+  width: 200px;
+}
+.discription  {
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+.options ul{
+  list-style-type: none;
+  display: grid;
+  justify-content: center;
+  font-size: 30px;
+  /*line-height: 1em*/
+}
+.options {
+  margin-top: 20px;
+}
