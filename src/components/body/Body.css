@@ -1,0 +1,23 @@
+.bd {
+  width: 100%;
+}
+.show-grid {
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+  padding: 10px;
+}
+#bck {
+  background-color: lightgrey;
+}
+.btns {
+  width: 100px;
+  margin-top: 50px;
+}
+.btnp {
+  margin-top: 50px;
+}
+.btnm {
+  float: right;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}

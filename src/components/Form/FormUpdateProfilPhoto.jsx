@@ -2,11 +2,12 @@ import React from 'react';
 import CloseButton from '../Buttons/CloseButton.jsx';
 
 const FormUpdateProfilPhoto = (props) =>
-  <form>
+  <form method="" action="">
     <p style={props.display}>
       <fieldset>
         <legend>Mettre à jour votre photo de profil : </legend>
-        <input type="file" name="porfolioImg"/>
+        <input type="url" name="porfolioImg"/>
+        <input type="submit" name="submit" value="Vaider"/>
       </fieldset>
     </p>
   </form>
