@@ -1,0 +1,10 @@
+.photo-content {
+  width: 40%;
+  text-align: center;
+  margin: auto;
+}
+
+.photo-content > img {
+  width: 200px;
+  height: 150px;
+}
