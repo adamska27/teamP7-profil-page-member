@@ -11,6 +11,7 @@ class App extends Component {
     super(props);
     this.state = {
       display: {display: 'none'},
+      data: []
     }
   }
 
@@ -32,9 +33,12 @@ class App extends Component {
       return res.json();
     })
     .then((json) => {
-      for(var i = 0; i < json.length; i++){
-         console.log("json",json[i].nom);
-      }
+      this.setState({
+        data: json
+        
+      })
+         console.log("le data",this.state.data);
+
 
     });
   }
