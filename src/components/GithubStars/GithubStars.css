@@ -1,0 +1,20 @@
+.GithubStars {
+  margin-bottom: 40px;
+  margin-right: 25px;
+  border: 1px solid #e7e7e7;
+  padding: 30px;
+  display: inline-block;
+}
+
+.GithubStars ul {
+  width: 315px;
+  height: 270px;
+}
+
+.GithubStars li {
+  margin-bottom: 30px;
+}
+
+.GithubStars li:last-child {
+  margin-bottom: 0;
+}
