@@ -7,6 +7,7 @@ import Profile from '../public/profile.jpg';
 import FormUpdateProfilPhoto from './components/Form/FormUpdateProfilPhoto.jsx';
 import Skills from './components/Skills/Skills.jsx';
 import Description from './components/description/Description.jsx';
+import Experience from './components/Experience/Experience.jsx';
 
 class App extends Component {
   constructor(props) {
@@ -59,7 +60,7 @@ class App extends Component {
 
         <Skills data={this.state.data[0].skills.split(',')} style={{padding: '10px'}}/>
         <h1>{this.state.data[0].prenom}</h1>
-
+        <Experience/>
       </div>
     );
   }

@@ -46,7 +46,6 @@ const FormUpdate = React.createClass({
             <FormUpdateProfilPhoto legend={this.props.legend}/>
           </Modal.Body>
           <Modal.Footer>
-            <Button type="submit" name="submit">Valider</Button>
             <Button onClick={this.close}>Close</Button>
           </Modal.Footer>
         </Modal>
