@@ -1,0 +1,19 @@
+.GithubRepo {
+  margin-bottom: 40px;
+  border: 1px solid #e7e7e7;
+  padding: 30px;
+  display: inline-block;
+}
+
+.GithubRepo ul {
+  width: 315px;
+  height: 270px;
+}
+
+.GithubRepo li {
+  margin-bottom: 30px;
+}
+
+.GithubRepo li:last-child {
+  margin-bottom: 0;
+}
