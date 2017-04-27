@@ -43,7 +43,7 @@ const FormUpdate = React.createClass({
             <Modal.Title>{this.props.title}</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <FormUpdateProfilPhoto legend={this.props.legend}/>
+            <FormUpdateProfilPhoto  action={this.props} legend={this.props.legend}/>
           </Modal.Body>
           <Modal.Footer>
             <Button onClick={this.close}>Close</Button>

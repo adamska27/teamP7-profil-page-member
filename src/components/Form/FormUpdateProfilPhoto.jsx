@@ -3,7 +3,7 @@ import CloseButton from '../Buttons/CloseButton.jsx';
 import {Button} from 'react-bootstrap';
 
 const FormUpdateProfilPhoto = (props) =>
-  <form style={{textAlign:'center'}} method="" action="">
+  <form style={{textAlign:'center'}} method="put" action=""
     <p style={props.display}>
       <fieldset>
         <legend>{props.legend}</legend>

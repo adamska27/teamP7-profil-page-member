@@ -9,7 +9,7 @@ class ListeUsers extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      data: [{"nom": "adams", "image": "image"}]
+      data: []
     }
   }
     componentDidMount() {
