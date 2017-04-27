@@ -17,7 +17,7 @@ const Skills = (props) =>
     </h2>
     <ul>
       {props.data.map((item) =>
-        <li>{item.skills}</li>
+        <li>{item}</li>
       )}
     </ul>
   </div>
