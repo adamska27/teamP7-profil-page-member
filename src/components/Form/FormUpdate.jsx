@@ -1,4 +1,3 @@
-
 import React, { Component } from 'react';
 require("react-bootstrap/lib/ModalHeader");
 import './Form.css';
@@ -11,7 +10,7 @@ import FormUpdateProfilPhoto from './FormUpdateProfilPhoto.jsx';
 import UpdateButton from '../Buttons/UpdateButton.jsx';
 
 
-const ChangeProfilPicture = React.createClass({
+const FormUpdate = React.createClass({
   getInitialState() {
     return { showModal: false };
   },
@@ -38,13 +37,13 @@ const ChangeProfilPicture = React.createClass({
 
     return (
       <div>
-        <UpdateButton onclick={this.open}/>
+        <UpdateButton onclick={this.open} style={this.props.style}/>
         <Modal show={this.state.showModal} onHide={this.close}>
           <Modal.Header closeButton>
-            <Modal.Title>Modification Photo</Modal.Title>
+            <Modal.Title>{this.props.title}</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <FormUpdateProfilPhoto/>
+            <FormUpdateProfilPhoto legend={this.props.legend}/>
           </Modal.Body>
           <Modal.Footer>
             <Button type="submit" name="submit">Valider</Button>
@@ -55,4 +54,4 @@ const ChangeProfilPicture = React.createClass({
     );
   }
 });
-export default ChangeProfilPicture;
+export default FormUpdate;

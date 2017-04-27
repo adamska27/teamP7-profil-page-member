@@ -3,13 +3,13 @@ const pg         = require('pg');
 const bodyParser = require("body-parser");
 const app        = express();
 const pgURL      = process.env.DATABASE_URL || 'postgres://iaekvsjyyychdl:243951ea2a84e89622c389bcdfc0fd9796242f34a698fb5ca8d04fd91472fb1f@ec2-176-34-113-15.eu-west-1.compute.amazonaws.com:5432/d500j5voi65rko';
-const router     = express.Router();
+
+const apiRoutes = express.Router();
 
 app.use(bodyParser.urlencoded({extended: true }));
-app.use('/find', router);
+app.use('/api', apiRoutes);
 app.use(express.static('./build/'));
 pg.defaults.ssl = true;
-
 
 
 
@@ -22,7 +22,7 @@ app.get('/users', (req, res) => {
     pg.connect(pgURL, (error, client, done) => {
         console.log(error);
         client
-        .query('SELECT id, prenom, nom, image, skills FROM users ', (error, result) => {
+        .query('SELECT * FROM users ', (error, result) => {
             console.log(error);
              done();
             res.send(result.rows)
@@ -59,13 +59,12 @@ app.post('/post', (req, res) => {
 //     })
 // });
 
-router.route('/:prenom')
-    .get((req, res ) =>{
+apiRoutes.get('/:id', (req, res ) => {
          console.log(pgURL);
-         pg.defaults.ssl = true;
+
         pg.connect(pgURL, (error, client, done) => {
         console.log(error);
-        client.query('SELECT * FROM users WHERE id = $1', [req.params.prenom], (error, result) => {
+        client.query('SELECT * FROM users WHERE id = $1', [req.params.id], (error, result) => {
             console.log(error)
              done();
              res.send(result.rows);
@@ -97,9 +96,9 @@ router.route('/:prenom')
     })
 
 
-router.use((req, res, next) => {
-    console.log('Sub-route running on.');
-    next();
-});
+// router.use((req, res, next) => {
+//     console.log('Sub-route running on.');
+//     next();
+// });
 
 app.listen(3005, () =>{ console.log("The App\'s running on port 3005");});

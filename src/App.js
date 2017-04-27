@@ -1,24 +1,23 @@
 import React, { Component } from 'react';
+import './App.css';
 import NavbarInstance from './components/HeaderPublic/Navbar.jsx';
-import BodyInstance from './components/body/Body.jsx';
 import GridInstance from './components/footerPublic/grid.jsx';
 import ProfilPhoto from './components/ProfilPhoto/ProfilPhoto.jsx';
-import logo from '../public/logo-couleur.png';
+import Profile from '../public/profile.jpg';
 import FormUpdateProfilPhoto from './components/Form/FormUpdateProfilPhoto.jsx';
-import ChangeProfilPicture from './components/Form/ChangeProfilPicture.jsx';
 import Skills from './components/Skills/Skills.jsx';
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      display: {display: 'none'},
-      data: []
+      data: [{"nom": "adams", "image": "image"}],
+      id: this.props.match.params.id
     }
   }
 
-  getAPI = () => {
-    fetch(`${window.location.origin}/users`)
+  componentDidMount() {
+    fetch(`${window.location.origin}/api/${this.state.id}`)
     .then((res) => {
       return res.json();
     })
@@ -26,27 +25,31 @@ class App extends Component {
       this.setState({
         data: json
       })
-         console.log("le data",this.state.data);
+      console.log("data",this.state.data);
+    });
+  }
+
+  renderProfile = () => {
+    return this.state.data.map( (item) => {
+      return ( <p>{item.nom} </p>);
     });
   }
 
 
   render() {
+    console.log(this.state.id);
+    console.log(this.state.data);
+
+    let profile = this.renderProfile();
+
     return (
       <div className="App">
         <NavbarInstance />
-        <ProfilPhoto source={logo} alt="logo" onclick={this.openForm} />
-        <BodyInstance />
-      <Skills />
-      <ul>
-        {
-          this.state.data.map( item =>
-          <a href={`/find/${item.id}`}><li>{item.nom}</li></a>
-         )
-       }
-      </ul>
-      <button onClick={this.getAPI}></button>
-      <GridInstance />
+        <h1>Bienvenue sur ton profil {profile}</h1>
+        <ProfilPhoto source={Profile} alt={this.state.data[0].image} />
+
+        <Skills data={this.state.data} style={{padding: '10px'}}/>
+        <h1>{this.state.data[0].prenom}</h1>
       </div>
     );
   }

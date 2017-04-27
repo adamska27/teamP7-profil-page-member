@@ -5,9 +5,8 @@ const FormUpdateProfilPhoto = (props) =>
   <form method="" action="">
     <p style={props.display}>
       <fieldset>
-        <legend>Mettre à jour votre photo de profil : </legend>
+        <legend>{props.legend}</legend>
         <input type="url" name="porfolioImg"/>
-        <input type="submit" name="submit" value="Vaider"/>
       </fieldset>
     </p>
   </form>

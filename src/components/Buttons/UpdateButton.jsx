@@ -7,7 +7,7 @@ const UpdateButton = (props) =>
     className='button-update'
     name='plus-circle'
     size='3x'
-    style={{ position: 'relative', top: '-40px', left:'-25px'}}
+    style={props.style}
     />
   </a>
 ;
